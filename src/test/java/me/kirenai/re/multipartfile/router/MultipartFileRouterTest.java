@@ -44,7 +44,7 @@ class MultipartFileRouterTest {
         when(this.multipartFileService.createFileWebFlux(any())).thenReturn(Mono.just(file.getName()));
 
         MultipartBodyBuilder multipartBodyBuilder = new MultipartBodyBuilder();
-        multipartBodyBuilder.part("file", new ByteArrayResource(file.getBytes())).contentType(MediaType.MULTIPART_FORM_DATA);
+        multipartBodyBuilder.part("file", new ByteArrayResource(file.getBytes())).contentType(MediaType.APPLICATION_PDF);
         multipartBodyBuilder.part("formulario", new FormularioDto()).contentType(MediaType.APPLICATION_JSON);
 
         this.client
